@@ -508,15 +508,12 @@
 <script>
   function closeAdPopup() {
     document.getElementById('ad-overlay').style.display = 'none';
-    localStorage.setItem('arjunaAdShown', 'true');
   }
 
-  // Show popup only once per visitor, after 3 seconds
-  if (!localStorage.getItem('arjunaAdShown')) {
-    setTimeout(function () {
-      document.getElementById('ad-overlay').style.display = 'flex';
-    }, 1000);
-  }
+  // Show popup every time the page is opened or refreshed, after 3 seconds
+  setTimeout(function () {
+    document.getElementById('ad-overlay').style.display = 'flex';
+  }, 1000);
 </script>
 </body>
 </html>
